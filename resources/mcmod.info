@@ -1,14 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "goldinthemtharhills",
+  "name": "Gold In Them Thar Hills",
+  "description": "Panning for gold. Done for The Modding Trials",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Lapiman"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
