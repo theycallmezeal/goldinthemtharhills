@@ -31,7 +31,7 @@ public class BlockSluice extends Block {
 		IBlockState blockAbove = world.getBlockState(pos.up());
 		Block blockType = blockAbove.getBlock();
 		
-		if (blockType.equals(Blocks.FLOWING_WATER)) {
+		if (blockType.equals(Blocks.FLOWING_WATER) || blockType.equals(Blocks.WATER)) {
 			double x = (double) pos.up().getX();
 			double y = (double) pos.up().getY();
 			double z = (double) pos.up().getZ();
