@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = GoldInThemTharHills.MODID, version = GoldInThemTharHills.VERSION)
 public class GoldInThemTharHills {
-    public static final String MODID = "examplemod";
+    public static final String MODID = "goldinthemtharhills";
     public static final String VERSION = "1.0";
     
     public static final BlockSluice sluice = new BlockSluice();
