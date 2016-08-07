@@ -37,7 +37,6 @@ public class GoldInThemTharHills {
     
     @EventHandler
     public void load(FMLInitializationEvent event) {
-    	MinecraftForge.EVENT_BUS.register(new GoldITTHEventHandler());
     }
     
     private static void registerBlock(Block block) {

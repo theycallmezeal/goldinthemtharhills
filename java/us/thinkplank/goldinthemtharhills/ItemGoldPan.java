@@ -3,6 +3,7 @@ package us.thinkplank.goldinthemtharhills;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -32,7 +33,9 @@ public class ItemGoldPan extends Item {
     	if (itemStack == null) {
     		return EnumActionResult.FAIL;
     	} else {
-			Block block = world.getBlockState(pos).getBlock();
+			Block block = world.getBlockState(wheresTheWater(pos, facing)).getBlock();
+			
+			System.out.println("THE BLOCK IS " + block.toString());
 			if (block.equals(Blocks.WATER)|| block.equals(Blocks.FLOWING_WATER)) {
 				double chance = probability;
 				
@@ -42,15 +45,32 @@ public class ItemGoldPan extends Item {
 				}
 				
 				if (true) {
-					double x = (double) pos.getX();
-					double y = (double) pos.getY();
-					double z = (double) pos.getZ();
-					ItemStack stack = new ItemStack(Items.GOLD_NUGGET);
-					EntityItem nugget = new EntityItem(world, x, y, z, stack);
-					world.spawnEntityInWorld(nugget);
+					player.inventory.addItemStackToInventory(new ItemStack(Items.GOLD_NUGGET));
+					if (!world.isRemote) {
+						System.out.println("spawning now...");
+						world.spawnEntityInWorld(new EntityXPOrb(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), 5));
+						System.out.println("done spawning.");
+					}
 				}
 			}
     		return EnumActionResult.SUCCESS;
     	}
+    }
+    
+    private static BlockPos wheresTheWater(BlockPos blockPos, EnumFacing facing) {
+    	if (facing == EnumFacing.UP)
+    		return blockPos.up();
+    	if (facing == EnumFacing.DOWN)
+    		return blockPos.down();
+    	if (facing == EnumFacing.NORTH)
+    		return blockPos.north();
+    	if (facing == EnumFacing.SOUTH)
+    		return blockPos.south();
+    	if (facing == EnumFacing.WEST)
+    		return blockPos.west();
+    	if (facing == EnumFacing.EAST)
+    		return blockPos.east();
+    	
+    	return blockPos.up();
     }
 }
