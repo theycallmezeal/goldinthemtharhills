@@ -47,9 +47,11 @@ public class BlockSluice extends Block {
 		IBlockState blockAbove = world.getBlockState(pos.up());
 		Block blockType = blockAbove.getBlock();
 		
+		double chance = probability;
+		
 		Biome biome = world.getBiomeForCoordsBody(pos);
 		if (biome.equals(Biomes.EXTREME_HILLS)) {
-			probability += bonus;
+			chance += bonus;
 		}
 		
 		if (this.fluids.isEmpty()) {
@@ -57,7 +59,7 @@ public class BlockSluice extends Block {
 			fluids.add(Blocks.WATER);
 		}
 		
-		if (random.nextDouble() < probability && this.fluids.contains(blockType)) {
+		if (random.nextDouble() < chance && this.fluids.contains(blockType)) {
 			double x = (double) pos.up().getX();
 			double y = (double) pos.up().getY();
 			double z = (double) pos.up().getZ();

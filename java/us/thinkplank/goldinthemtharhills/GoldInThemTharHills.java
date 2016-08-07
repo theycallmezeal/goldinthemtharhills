@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,6 +21,7 @@ public class GoldInThemTharHills {
     
     public static final BlockSluice sluice = new BlockSluice("sluice", Material.WOOD, 0.05, 0.02);
     public static final BlockSluice iron_sluice = new BlockSluice("iron_sluice", Material.IRON, 0.10, 0.05);
+    public static final ItemGoldPan gold_pan = new ItemGoldPan();
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -28,8 +30,14 @@ public class GoldInThemTharHills {
     	
     	iron_sluice.addFluid(Blocks.FLOWING_WATER);
     	
+    	registerItem(gold_pan);
     	registerBlock(sluice);
     	registerBlock(iron_sluice);
+    }
+    
+    @EventHandler
+    public void load(FMLInitializationEvent event) {
+    	MinecraftForge.EVENT_BUS.register(new GoldITTHEventHandler());
     }
     
     private static void registerBlock(Block block) {
@@ -37,5 +45,11 @@ public class GoldInThemTharHills {
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    }
+    
+    private static void registerItem(Item item) {
+    	item.setUnlocalizedName(item.getRegistryName().getResourcePath());
+    	GameRegistry.register(item);
+    	ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 }
