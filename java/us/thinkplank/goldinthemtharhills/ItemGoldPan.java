@@ -32,7 +32,6 @@ public class ItemGoldPan extends Item {
     public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		Block block = world.getBlockState(pos.offset(facing)).getBlock();
 		
-		System.out.println("THE BLOCK IS " + block.toString());
 		if (block.equals(Blocks.WATER)|| block.equals(Blocks.FLOWING_WATER)) {
 			double chance = probability;
 			
@@ -44,9 +43,7 @@ public class ItemGoldPan extends Item {
 			if (true) {
 				player.inventory.addItemStackToInventory(new ItemStack(Items.GOLD_NUGGET));
 				if (!world.isRemote) {
-					System.out.println("spawning now...");
 					world.spawnEntityInWorld(new EntityXPOrb(world, pos.offset(facing).getX(), pos.offset(facing).getY(), pos.offset(facing).getZ(), 5));
-					System.out.println("done spawning.");
 				}
 			}
 		}
