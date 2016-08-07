@@ -1,6 +1,7 @@
 package us.thinkplank.goldinthemtharhills;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -17,15 +18,18 @@ public class GoldInThemTharHills {
     public static final String MODID = "goldinthemtharhills";
     public static final String VERSION = "1.0";
     
-    public static final BlockSluice sluice = new BlockSluice();
+    public static final BlockSluice sluice = new BlockSluice("sluice", Material.WOOD, 0.05, 0.02);
+    public static final BlockSluice iron_sluice = new BlockSluice("iron_sluice", Material.IRON, 0.10, 0.05);
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	sluice.addFluid(Blocks.FLOWING_WATER);
+    	sluice.addFluid(Blocks.WATER);
+    	
+    	iron_sluice.addFluid(Blocks.FLOWING_WATER);
+    	
     	registerBlock(sluice);
-    }
-    
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
+    	registerBlock(iron_sluice);
     }
     
     private static void registerBlock(Block block) {

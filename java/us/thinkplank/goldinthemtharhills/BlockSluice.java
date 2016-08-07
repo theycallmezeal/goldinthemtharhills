@@ -1,6 +1,8 @@
 package us.thinkplank.goldinthemtharhills;
 
+import java.util.LinkedHashSet;
 import java.util.Random;
+import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -8,22 +10,36 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 
 public class BlockSluice extends Block {
-	public BlockSluice() {
+	private static double probability;
+	private static double bonus;
+	private static Set<Block> fluids;
+	
+	public BlockSluice(String name, Material material, double probability, double bonus) {
 		super(Material.WOOD);
 		setHardness(2F);
-        setSoundType(SoundType.WOOD);
-        setRegistryName("sluice");
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setSoundType(SoundType.METAL);
+        setRegistryName(name);
+        setCreativeTab(CreativeTabs.TOOLS);
         setHarvestLevel("axe", 0);
         setTickRandomly(true);
+        
+        this.probability = probability;
+        this.bonus = bonus;
+        this.fluids = new LinkedHashSet<Block>();
+	}
+	
+	public void addFluid(Block fluid) {
+		this.fluids.add(fluid);
 	}
 	
 	@Override
@@ -31,7 +47,17 @@ public class BlockSluice extends Block {
 		IBlockState blockAbove = world.getBlockState(pos.up());
 		Block blockType = blockAbove.getBlock();
 		
-		if (blockType.equals(Blocks.FLOWING_WATER) || blockType.equals(Blocks.WATER)) {
+		Biome biome = world.getBiomeForCoordsBody(pos);
+		if (biome.equals(Biomes.EXTREME_HILLS)) {
+			probability += bonus;
+		}
+		
+		if (this.fluids.isEmpty()) {
+			fluids.add(Blocks.FLOWING_WATER);
+			fluids.add(Blocks.WATER);
+		}
+		
+		if (random.nextDouble() < probability && this.fluids.contains(blockType)) {
 			double x = (double) pos.up().getX();
 			double y = (double) pos.up().getY();
 			double z = (double) pos.up().getZ();
