@@ -4,8 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -33,6 +35,10 @@ public class GoldInThemTharHills {
     	registerItem(gold_pan);
     	registerBlock(sluice);
     	registerBlock(iron_sluice);
+    	
+    	GameRegistry.addRecipe(new ItemStack(gold_pan), "x x", " y ", 'x', Items.IRON_INGOT, 'y', Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
+    	GameRegistry.addRecipe(new ItemStack(sluice), "x x", "xyx", "xxx", 'x', Blocks.PLANKS, 'y', gold_pan);
+    	GameRegistry.addRecipe(new ItemStack(iron_sluice), "x x", "xyx", "xxx", 'x', Items.IRON_INGOT, 'y', gold_pan);
     }
     
     @EventHandler
