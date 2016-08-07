@@ -40,7 +40,7 @@ public class ItemGoldPan extends Item {
 				chance += bonus;
 			}
 			
-			if (true) {
+			if (Math.random() < chance) {
 				player.inventory.addItemStackToInventory(new ItemStack(Items.GOLD_NUGGET));
 				if (!world.isRemote) {
 					world.spawnEntityInWorld(new EntityXPOrb(world, pos.offset(facing).getX(), pos.offset(facing).getY(), pos.offset(facing).getZ(), 5));
