@@ -45,7 +45,7 @@ public class ItemGoldPan extends Item {
 				player.inventory.addItemStackToInventory(new ItemStack(Items.GOLD_NUGGET));
 				if (!world.isRemote) {
 					System.out.println("spawning now...");
-					world.spawnEntityInWorld(new EntityXPOrb(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), 5));
+					world.spawnEntityInWorld(new EntityXPOrb(world, pos.offset(facing).getX(), pos.offset(facing).getY(), pos.offset(facing).getZ(), 5));
 					System.out.println("done spawning.");
 				}
 			}
