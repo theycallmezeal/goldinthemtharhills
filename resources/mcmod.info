@@ -5,11 +5,7 @@
   "description": "Panning for gold. Done for The Modding Trials",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["Lapiman"],
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
+  "url": "http://github.com/thinkplank/goldinthemtharhills",
+  "authorList": ["Lapiman"]
 }
 ]
