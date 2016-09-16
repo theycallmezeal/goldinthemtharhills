@@ -24,7 +24,7 @@ public class BlockSluice extends Block {
 	private static double bonus;
 	private static Set<Block> fluids;
 	
-	public BlockSluice(String name, Material material, double probability, double bonus) {
+	public BlockSluice(String name, Material material, double nugsPerSec, double bonusPerSec) {
 		super(Material.WOOD);
 		setHardness(2F);
         setSoundType(SoundType.METAL);
@@ -33,8 +33,8 @@ public class BlockSluice extends Block {
         setHarvestLevel("axe", 0);
         setTickRandomly(true);
         
-        this.probability = probability;
-        this.bonus = bonus;
+        this.probability = nugsPerSec / (60.0 * 60.0 * 20.0);
+        this.bonus = bonus / (60.0 * 60.0 * 20.0);
         this.fluids = new LinkedHashSet<Block>();
 	}
 	
