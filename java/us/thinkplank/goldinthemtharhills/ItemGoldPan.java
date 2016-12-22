@@ -1,8 +1,6 @@
 package us.thinkplank.goldinthemtharhills;
 
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
@@ -24,7 +22,7 @@ public class ItemGoldPan extends Item {
 	public ItemGoldPan() {
 		super();
         setMaxStackSize(64);
-        setCreativeTab(CreativeTabs.TOOLS);
+        setCreativeTab(GoldInThemTharHills.tabGITTH);
         setRegistryName("gold_pan");
 	}
 	

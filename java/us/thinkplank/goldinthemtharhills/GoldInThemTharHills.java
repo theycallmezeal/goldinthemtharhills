@@ -1,26 +1,25 @@
 package us.thinkplank.goldinthemtharhills;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = GoldInThemTharHills.MODID, version = GoldInThemTharHills.VERSION)
 public class GoldInThemTharHills {
     public static final String MODID = "goldinthemtharhills";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.0.2";
+    
+    public static final CreativeTabs tabGITTH = new CreativeTabs("gitth") {
+    	@Override 
+    	public Item getTabIconItem() {
+    		return Item.getItemFromBlock(sluice);
+    	}
+    };
     
     public static final BlockSluice sluice = new BlockSluice("sluice", Material.WOOD, 16, 8);
     public static final BlockSluice iron_sluice = new BlockSluice("iron_sluice", Material.IRON, 32, 12);

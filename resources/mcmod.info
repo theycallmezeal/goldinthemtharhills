@@ -3,7 +3,7 @@
   "modid": "goldinthemtharhills",
   "name": "Gold In Them Thar Hills",
   "description": "Panning for gold. Done for The Modding Trials",
-  "version": "1.0",
+  "version": "1.0.2",
   "mcversion": "${mcversion}",
   "url": "http://github.com/thinkplank/goldinthemtharhills",
   "authorList": ["Lapiman"]
