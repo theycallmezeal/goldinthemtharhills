@@ -21,8 +21,8 @@ public class GoldInThemTharHills {
     	}
     };
     
-    public static final BlockSluice sluice = new BlockSluice("sluice", Material.WOOD, 16, 8);
-    public static final BlockSluice iron_sluice = new BlockSluice("iron_sluice", Material.IRON, 32, 12);
+    public static final BlockSluice sluice = new BlockSluice("goldinthemtharhills_sluice", Material.WOOD, 16, 8);
+    public static final BlockSluice iron_sluice = new BlockSluice("goldinthemtharhills_iron_sluice", Material.IRON, 32, 12);
     public static final ItemGoldPan gold_pan = new ItemGoldPan();
     
     @SidedProxy(clientSide = "us.thinkplank.goldinthemtharhills.ClientProxy", serverSide = "us.thinkplank.goldinthemtharhills.ServerProxy")
