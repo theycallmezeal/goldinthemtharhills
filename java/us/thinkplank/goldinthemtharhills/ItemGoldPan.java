@@ -23,7 +23,7 @@ public class ItemGoldPan extends Item {
 		super();
         setMaxStackSize(64);
         setCreativeTab(GoldInThemTharHills.tabGITTH);
-        setRegistryName("goldinthemtharhills_gold_pan");
+        setRegistryName("gold_pan");
 	}
 	
     @Override

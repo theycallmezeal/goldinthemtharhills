@@ -31,13 +31,13 @@ public class CommonProxy {
     }
     
     public static void registerBlock(Block block) {
-    	block.setUnlocalizedName(block.getRegistryName().getResourcePath());
+    	block.setUnlocalizedName(GoldInThemTharHills.MODID + "." + block.getRegistryName().getResourcePath());
     	GameRegistry.register(block);
     	GameRegistry.register(new ItemBlock(block), block.getRegistryName());
     }
     
     public static void registerItem(Item item) {
-    	item.setUnlocalizedName(item.getRegistryName().getResourcePath());
+    	item.setUnlocalizedName(GoldInThemTharHills.MODID + "." + item.getRegistryName().getResourcePath());
     	GameRegistry.register(item);
     }
 }
