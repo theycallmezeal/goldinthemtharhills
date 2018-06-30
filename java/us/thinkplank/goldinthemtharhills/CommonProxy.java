@@ -24,8 +24,14 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemBlock(GoldInThemTharHills.sluice).setRegistryName(GoldInThemTharHills.sluice.getRegistryName()));
-        event.getRegistry().register(new ItemBlock(GoldInThemTharHills.iron_sluice).setRegistryName(GoldInThemTharHills.iron_sluice.getRegistryName()));
+        event.getRegistry().register(GoldInThemTharHills.gold_pan);
+    	registerItemBlock(GoldInThemTharHills.sluice, event);
+    	registerItemBlock(GoldInThemTharHills.iron_sluice, event);
+    }
+    
+    private static void registerItemBlock(Block block, RegistryEvent.Register<Item> event) {
+    	Item itemBlock = new ItemBlock(block).setRegistryName(block.getRegistryName());
+    	event.getRegistry().register(itemBlock);
     }
 
 	public void preInit(FMLPreInitializationEvent event) {

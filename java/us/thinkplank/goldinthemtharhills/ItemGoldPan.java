@@ -24,6 +24,7 @@ public class ItemGoldPan extends Item {
         setMaxStackSize(64);
         setCreativeTab(GoldInThemTharHills.tabGITTH);
         setRegistryName("gold_pan");
+        setUnlocalizedName(GoldInThemTharHills.MODID + ".gold_pan");
 	}
 	
     @Override

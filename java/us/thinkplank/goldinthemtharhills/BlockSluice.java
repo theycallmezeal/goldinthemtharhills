@@ -17,7 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
-
 public class BlockSluice extends Block {
 	private static double probability;
 	private static double bonus;
@@ -28,6 +27,7 @@ public class BlockSluice extends Block {
 		setHardness(2F);
         setSoundType(SoundType.METAL);
         setRegistryName(name);
+        setUnlocalizedName(GoldInThemTharHills.MODID + "." + name);
         setCreativeTab(GoldInThemTharHills.tabGITTH);
         setHarvestLevel("axe", 0);
         setTickRandomly(true);
