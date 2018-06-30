@@ -64,7 +64,7 @@ public class BlockSluice extends Block {
 			double z = (double) pos.up().getZ();
 			ItemStack stack = new ItemStack(Items.GOLD_NUGGET);
 			EntityItem nugget = new EntityItem(world, x, y, z, stack);
-			world.spawnEntityInWorld(nugget);
+			world.spawnEntity(nugget);
 		}
 	}
 }

@@ -27,7 +27,7 @@ public class ItemGoldPan extends Item {
 	}
 	
     @Override
-    public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		Block block = world.getBlockState(pos.offset(facing)).getBlock();
 		
 		if (block.equals(Blocks.WATER) || block.equals(Blocks.FLOWING_WATER)) {
@@ -41,7 +41,7 @@ public class ItemGoldPan extends Item {
 			if (Math.random() < chance) {
 				player.inventory.addItemStackToInventory(new ItemStack(Items.GOLD_NUGGET));
 				if (!world.isRemote) {
-					world.spawnEntityInWorld(new EntityXPOrb(world, pos.offset(facing).getX(), pos.offset(facing).getY(), pos.offset(facing).getZ(), 5));
+					world.spawnEntity(new EntityXPOrb(world, pos.offset(facing).getX(), pos.offset(facing).getY(), pos.offset(facing).getZ(), 5));
 				}
 			}
 		}
