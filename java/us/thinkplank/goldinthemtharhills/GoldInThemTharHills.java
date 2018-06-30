@@ -4,6 +4,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -16,8 +17,8 @@ public class GoldInThemTharHills {
     
     public static final CreativeTabs tabGITTH = new CreativeTabs("gitth") {
     	@Override 
-    	public Item getTabIconItem() {
-    		return Item.getItemFromBlock(sluice);
+    	public ItemStack getTabIconItem() {
+    		return new ItemStack(Item.getItemFromBlock(sluice));
     	}
     };
     
