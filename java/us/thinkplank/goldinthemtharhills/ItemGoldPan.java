@@ -30,7 +30,7 @@ public class ItemGoldPan extends Item {
     public EnumActionResult onItemUse(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		Block block = world.getBlockState(pos.offset(facing)).getBlock();
 		
-		if (block.equals(Blocks.WATER)|| block.equals(Blocks.FLOWING_WATER)) {
+		if (block.equals(Blocks.WATER) || block.equals(Blocks.FLOWING_WATER)) {
 			double chance = probability;
 			
 			Biome biome = world.getBiomeForCoordsBody(pos);

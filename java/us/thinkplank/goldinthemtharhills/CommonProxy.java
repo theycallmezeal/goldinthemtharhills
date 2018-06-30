@@ -16,10 +16,6 @@ public class CommonProxy {
     	registerItem(GoldInThemTharHills.gold_pan);
     	registerBlock(GoldInThemTharHills.sluice);
     	registerBlock(GoldInThemTharHills.iron_sluice);
-    	
-    	GameRegistry.addRecipe(new ItemStack(GoldInThemTharHills.gold_pan), "x x", " y ", 'x', Items.IRON_INGOT, 'y', Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
-    	GameRegistry.addRecipe(new ItemStack(GoldInThemTharHills.sluice), "x x", "xyx", "xxx", 'x', Blocks.PLANKS, 'y', GoldInThemTharHills.gold_pan);
-    	GameRegistry.addRecipe(new ItemStack(GoldInThemTharHills.iron_sluice), "x x", "xyx", "xxx", 'x', Items.IRON_INGOT, 'y', GoldInThemTharHills.gold_pan);
     }
 
     public void init(FMLInitializationEvent e) {

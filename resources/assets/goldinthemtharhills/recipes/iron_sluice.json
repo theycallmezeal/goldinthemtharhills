@@ -1,0 +1,18 @@
+{
+	"result": {
+		"item": "goldinthemtharhills:sluice"
+	},
+	"pattern": [
+		"x x",
+		"xyx",
+		"xxx"
+	],
+	"key": {
+		"x": {
+			"item": "minecraft:planks"
+		},
+		"y": {
+			"item": "goldinthemtharhills:iron_ingot"
+		}
+	}
+}

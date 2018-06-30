@@ -1,0 +1,17 @@
+{
+	"result": {
+		"item": "goldinthemtharhills:gold_pan"
+	},
+	"pattern": [
+		"x x",
+		" y "
+	],
+	"key": {
+		"x": {
+			"item": "minecraft:iron_ingot"
+		},
+		"y": {
+			"item": "minecraft:heavy_weighted_pressure_plate"
+		}
+	}
+}
