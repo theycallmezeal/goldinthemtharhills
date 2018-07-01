@@ -36,11 +36,6 @@ public class GoldInThemTharHills {
     
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	sluice.addFluid(Blocks.FLOWING_WATER);
-    	sluice.addFluid(Blocks.WATER);
-    	
-    	iron_sluice.addFluid(Blocks.FLOWING_WATER);
-    	
     	proxy.preInit(event);
     }
 

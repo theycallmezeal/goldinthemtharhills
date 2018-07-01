@@ -20,10 +20,9 @@ import net.minecraft.world.biome.Biome;
 public class BlockSluice extends Block {
 	private static double probability;
 	private static double bonus;
-	private static Set<Block> fluids;
 	
 	public BlockSluice(String name, Material material, double nugsPerSec, double bonusPerSec) {
-		super(Material.WOOD);
+		super(material);
 		setHardness(2F);
         setSoundType(SoundType.METAL);
         setRegistryName(name);
@@ -34,17 +33,13 @@ public class BlockSluice extends Block {
         
         this.probability = nugsPerSec / (60.0 * 60.0 * 20.0);
         this.bonus = bonus / (60.0 * 60.0 * 20.0);
-        this.fluids = new LinkedHashSet<Block>();
-	}
-	
-	public void addFluid(Block fluid) {
-		this.fluids.add(fluid);
 	}
 	
 	@Override
 	public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
 		IBlockState blockAbove = world.getBlockState(pos.up());
 		Block blockType = blockAbove.getBlock();
+		boolean isWaterAbove = blockType.equals(Blocks.FLOWING_WATER) || blockType.equals(Blocks.WATER);
 		
 		double chance = probability;
 		
@@ -53,12 +48,7 @@ public class BlockSluice extends Block {
 			chance += bonus;
 		}
 		
-		if (this.fluids.isEmpty()) {
-			fluids.add(Blocks.FLOWING_WATER);
-			fluids.add(Blocks.WATER);
-		}
-		
-		if (random.nextDouble() < chance && this.fluids.contains(blockType)) {
+		if (random.nextDouble() < chance && isWaterAbove ) {
 			double x = (double) pos.up().getX();
 			double y = (double) pos.up().getY();
 			double z = (double) pos.up().getZ();
