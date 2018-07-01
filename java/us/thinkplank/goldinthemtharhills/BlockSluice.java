@@ -21,7 +21,7 @@ public class BlockSluice extends Block {
 	private static double probability;
 	private static double bonus;
 	
-	public BlockSluice(String name, Material material, double nugsPerSec, double bonusPerSec) {
+	public BlockSluice(String name, Material material, double nugsPerHour, double bonusPerHour) {
 		super(material);
 		setHardness(2F);
         setSoundType(SoundType.METAL);
@@ -31,8 +31,8 @@ public class BlockSluice extends Block {
         setHarvestLevel("axe", 0);
         setTickRandomly(true);
         
-        this.probability = nugsPerSec / (60.0 * 60.0 * 20.0);
-        this.bonus = bonus / (60.0 * 60.0 * 20.0);
+        this.probability = nugsPerHour / (60.0 * 60.0 * 20.0);
+        this.bonus = bonusPerHour / (60.0 * 60.0 * 20.0);
 	}
 	
 	@Override
