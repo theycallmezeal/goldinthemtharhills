@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = GoldInThemTharHills.MODID, version = GoldInThemTharHills.VERSION)
 public class GoldInThemTharHills {
     public static final String MODID = "goldinthemtharhills";
-    public static final String VERSION = "1.0.3";
+    public static final String VERSION = "1.0.2";
     
     public static final CreativeTabs tabGITTH = new CreativeTabs("gitth") {
     	@Override 
