@@ -6,6 +6,7 @@
 		"x x",
 		" y "
 	],
+	"type": "minecraft:crafting_shaped",
 	"key": {
 		"x": {
 			"item": "minecraft:iron_ingot"

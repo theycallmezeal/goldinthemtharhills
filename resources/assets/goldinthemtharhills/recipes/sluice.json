@@ -7,9 +7,11 @@
 		"xyx",
 		"xxx"
 	],
+	"type": "minecraft:crafting_shaped",
 	"key": {
 		"x": {
-			"item": "minecraft:planks"
+			"item": "minecraft:planks",
+			"data": 32767
 		},
 		"y": {
 			"item": "goldinthemtharhills:gold_pan"

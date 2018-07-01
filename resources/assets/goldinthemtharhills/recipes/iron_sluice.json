@@ -7,12 +7,13 @@
 		"xyx",
 		"xxx"
 	],
+	"type": "minecraft:crafting_shaped",
 	"key": {
 		"x": {
-			"item": "minecraft:planks"
+			"item": "minecraft:iron_ingot"
 		},
 		"y": {
-			"item": "goldinthemtharhills:iron_ingot"
+			"item": "goldinthemtharhills:gold_pan"
 		}
 	}
 }
